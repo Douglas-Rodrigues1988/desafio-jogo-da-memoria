@@ -1,10 +1,22 @@
+/* Definindo variáveis para cores e espaçamentos */
+:root {
+    --primary-bg: #abb1b1;
+    --primary-color: #000000;
+    --secondary-color: #474747;
+    --highlight-color: #7fffd4;
+    --text-color: #fff;
+    --spacing: 30px;
+    --transition-duration: 0.3s;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #abb1b1;
+    background: var(--primary-bg);
     user-select: none;
+    margin: 0;
 }
 
 .container {
@@ -13,28 +25,31 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: var(--spacing);
     background: linear-gradient(
         325deg,
-        #000000 0%,
-        #474747 30%,
+        var(--primary-color) 0%,
+        var(--secondary-color) 30%,
         #5c5c5c 70%,
-        #abb1b1 100%
+        var(--primary-bg) 100%
     );
     padding: 40px 60px;
+    border-radius: 12px; /* Adicionando cantos arredondados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 h2 {
     font-size: 3em;
-    color: #fff;
+    color: var(--text-color);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin: 0; /* Remover margens padrão */
 }
 
 .reset {
     padding: 15px 20px;
     width: 100%;
-    color: #000;
+    color: var(--primary-color);
     background: #fff;
     border: none;
     font-size: 1.5em;
@@ -42,11 +57,13 @@ h2 {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    transition: background-color var(--transition-duration), color var(--transition-duration); /* Adicionando transição */
 }
 
 .reset:focus {
-    color: #474747;
-    background-color: #7fffd4;
+    color: var(--secondary-color);
+    background-color: var(--highlight-color);
+    outline: none; /* Remover outline padrão */
 }
 
 .game {
@@ -55,8 +72,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    transform-style: preserve-3d;
-    perspective: 500px;
+    perspective: 800px; /* Aumentando o efeito 3D */
 }
 
 .item {
@@ -66,19 +82,18 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #abb1b1;
+    background-color: var(--primary-bg);
     font-size: 3em;
     transform: rotateY(180deg);
-    transition: 0.25s;
+    transition: transform var(--transition-duration), background-color var(--transition-duration); /* Suavizando transição */
 }
 
 .item::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: #7fffd4;
-    opacity: 0.85;
-    transition: 0.25s;
+    background: var(--highlight-color);
+    transition: transform var(--transition-duration), opacity var(--transition-duration);
     transform: rotateY(0deg);
     backface-visibility: hidden;
 }

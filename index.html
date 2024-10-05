@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogo da Memória - Teste suas habilidades de memorização combinando pares de emojis!">
     <title>Jogo da Memória</title>
+    
+    <!-- Reset CSS -->
     <link rel="stylesheet" href="./src/styles/reset.css">
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="./src/styles/main.css">
 </head>
 <body>
-    <div class="container">
+    
+    <main class="container">
         <h2>JOGO DA MEMÓRIA</h2>
-        <div class="game"></div>
-        <button class="reset" onclick="window.location.reload()"> RESET GAME</button>
-    </div>
+        <div class="game" aria-label="Tabuleiro do jogo"></div>
+        <button class="reset" aria-label="Reiniciar o jogo">Reset Game</button>
+    </main>
 
+    <!-- Script defer para garantir que o DOM seja carregado antes do JS -->
     <script src="./src/scripts/engine.js" defer></script>
 </body>
 </html>
