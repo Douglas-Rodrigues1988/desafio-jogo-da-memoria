@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #abb1b1;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(
+        325deg,
+        #000000 0%,
+        #474747 30%,
+        #5c5c5c 70%,
+        #abb1b1 100%
+    );
+    padding: 40px 60px;
+}
